@@ -28,4 +28,5 @@ docker exec -it $container bash
 
 sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT name FROM master.dbo.sysdatabases"
 sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT loginname, dbname FROM syslogins"
+tsql -H localhost -p 1433 -U rails -P '' -D activerecord_unittest
 ```
