@@ -25,6 +25,6 @@ Ensure that the build script worked.
 container = $(docker ps -a -q --filter ancestor=metaskills/mssql-server-linux-rails)
 docker exec -it $container bash
 
-sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES"
-sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT name FROM sys.database_principals"
+sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT name FROM master.dbo.sysdatabases"
+sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT loginname, dbname FROM syslogins"
 ```
