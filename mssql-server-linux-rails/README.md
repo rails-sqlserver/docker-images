@@ -4,6 +4,7 @@
 Using the official image for Microsoft SQL Server for Linux.
 
 * https://hub.docker.com/r/microsoft/mssql-server-linux/
+* https://github.com/rails-sqlserver/docker-images
 * https://github.com/rails-sqlserver/activerecord-sqlserver-adapter
 
 Includes test database & users w/permissions needed to test the SQL Server adapter for Rails.
