@@ -1,12 +1,12 @@
 
-## mssql-server-linux-tinytds
+## mssql-server-linux-rails
 
 Using the official image for Microsoft SQL Server for Linux.
 
 * https://hub.docker.com/r/microsoft/mssql-server-linux/
-* https://github.com/rails-sqlserver/tiny_tds
+* https://github.com/rails-sqlserver/activerecord-sqlserver-adapter
 
-Includes test database & users w/permissions needed to test TinyTDS.
+Includes test database & users w/permissions needed to test the SQL Server adapter for Rails.
 
 
 #### Building
@@ -14,7 +14,7 @@ Includes test database & users w/permissions needed to test TinyTDS.
 Assuming that the `$PWD` is this directory.
 
 ```shell
-docker build -t metaskills/mssql-server-linux-tinytds .
+./build.sh
 ```
 
 #### Verify
@@ -28,3 +28,4 @@ docker exec -it $container bash
 sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES"
 sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT name FROM sys.database_principals"
 ```
+

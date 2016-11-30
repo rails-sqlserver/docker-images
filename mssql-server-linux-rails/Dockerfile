@@ -1,0 +1,13 @@
+FROM microsoft/mssql-server-linux
+MAINTAINER Ken Collins <ken@metaskills.net>
+LABEL description="Microsoft SQL Server for Linux - Rails Testing" \
+      version="1.0"
+
+ENV ACCEPT_EULA Y
+ENV SA_PASSWORD super01S3cUr3
+EXPOSE 1433
+
+COPY rails/* /opt/rails/
+
+RUN apt-get update
+RUN apt-get install sqsh -y

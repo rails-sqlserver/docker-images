@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-image=$(docker images -q --filter label=metaskills/mssql-server-linux-tinytds)
+image=$(docker ps --all --quiet --filter ancestor=metaskills/mssql-server-linux-rails)
 if [[ -n $image ]]; then
   docker rmi -f $image
 fi
