@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-tag=1.2
+tag=1.3
 
 images=$(docker images --all --quiet)
 if [[ -n $images ]]; then
