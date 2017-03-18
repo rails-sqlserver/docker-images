@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-sqsh -U sa -P $SA_PASSWORD -S localhost -C "$(< /opt/tinytds/db-create.sql)"
-sqsh -U sa -P $SA_PASSWORD -S localhost -C "$(< /opt/tinytds/db-login.sql)"
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SA_PASSWORD -i /opt/tinytds/db-create.sql
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SA_PASSWORD -i /opt/tinytds/db-login.sql
