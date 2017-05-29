@@ -36,8 +36,8 @@ docker run -p 1433:1433 -d metaskills/mssql-server-linux-tinytds
 container=$(docker ps --all --quiet --filter ancestor=metaskills/mssql-server-linux-tinytds)
 docker exec -it $container bash
 
-sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT name FROM master.dbo.sysdatabases"
-sqsh -U sa -P super01S3cUr3 -S localhost -C "SELECT loginname, dbname FROM syslogins"
+/opt/mssql-tools/bin/sqlcmd -U sa -P super01S3cUr3 -S localhost -Q "SELECT loginname, dbname FROM syslogins"
+/opt/mssql-tools/bin/sqlcmd -U sa -P super01S3cUr3 -S localhost -Q "SELECT name FROM master.dbo.sysdatabases"
 
 docker stop $container
 ```
