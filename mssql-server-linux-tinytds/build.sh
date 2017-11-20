@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 set -e
 
-tag=2.0
+tag=2017-GA
 
 images=$(docker images --all --quiet)
 if [[ -n $images ]]; then
   docker rmi --force $images
 fi
 
-docker pull microsoft/mssql-server-linux:latest
+docker pull microsoft/mssql-server-linux:2017-GA
 docker build --no-cache -t metaskills/mssql-server-linux-tinytds .
 
 docker run -p 1433:1433 -d metaskills/mssql-server-linux-tinytds
