@@ -11,9 +11,11 @@ Includes all CI dependencies, Ruby, [FreeTDS](http://www.freetds.org/) and [`wai
 
 All commands assume that the `$PWD` is this directory.
 
-### Build
+### Build and Push Image
 
-Fully automated build
+Fully automated build. The docker image is pushed as part of the build process. So you need to login to Github packages first:
+
+`docker login ghcr.io`
 
 ```shell
 ./build.sh 2.7.1
