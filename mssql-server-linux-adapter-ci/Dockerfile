@@ -1,8 +1,9 @@
 ARG TARGET_VERSION
 
-FROM ruby:${TARGET_VERSION}-alpine
+# Use `alpine3.18` as there is an issue with SQLite and Ruby v3.3.0 on `alpine3.19`. Revert back to `alpine` when the issue is resolved.
+FROM ruby:${TARGET_VERSION}-alpine3.18
 
-LABEL maintainer="Wanderson Policarpo <wpolicarpo@gmail.com>"
+LABEL maintainer="Aidan Haran <aidanharan@yahoo.com>"
 
 RUN apk add git make build-base linux-headers sqlite-dev tzdata freetds freetds-dev libpq postgresql-dev
 

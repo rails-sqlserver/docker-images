@@ -15,10 +15,14 @@ All commands assume that the `$PWD` is this directory.
 
 Fully automated build. The docker image is pushed as part of the build process. So you need to login to Github packages first:
 
-`docker login ghcr.io`
+```shell 
+docker login ghcr.io
+```
+
+Then run the build and push script.
 
 ```shell
-./build.sh 2.7.1
+./build.sh 3.3.0
 ```
 
 ### Build Testing
@@ -26,7 +30,7 @@ Fully automated build. The docker image is pushed as part of the build process. 
 Simple build command.
 
 ```shell
-docker build -t railssqlserver/activerecord-sqlserver-adapter:2.7.1 .
+docker build --build-arg TARGET_VERSION=3.3.0 -t rails-sqlserver/activerecord-sqlserver-adapter:3.3.0 .
 ```
 
 Ensure that the build script worked.
