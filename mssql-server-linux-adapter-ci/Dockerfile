@@ -1,6 +1,7 @@
 ARG TARGET_VERSION
 
-FROM ruby:${TARGET_VERSION}-alpine
+# Use `alpine3.18` as there is an issue with SQLite and Ruby v3.3.2 on `alpine3.19`. Revert back to `alpine` when the issue is resolved.
+FROM ruby:${TARGET_VERSION}-alpine3.18
 
 LABEL maintainer="Aidan Haran <aidanharan@yahoo.com>"
 
